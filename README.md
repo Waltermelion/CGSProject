@@ -1,7 +1,7 @@
 # CGSProject
 CGS Project for university
 
-Mecânicas: Refere-se às regras e
+• Mecânicas: Refere-se às regras e
 processos do jogo. Descrevem o
 objetivo do jogo, como os jogadores
 podem ou não o alcançar, e o que
