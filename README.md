@@ -2,7 +2,7 @@
 CGS Project for university
 
 ## Mecânicas: 
-O jogo passa-se em `terceira pessoa` num mundo `3D`, camara `Over the Shoulder`, movimento `WASD`, controla-se a camara com o rato, ao aproximar de um puzzle a camara translata do ombro do jogador para uma vista mais favorável do puzzle em questão.
+O jogo passa-se em `terceira pessoa` num mundo `3D`, camara `Over the Shoulder`, movimento `WASD`, controla-se a camara com o rato, ao aproximar de um puzzle a camara translata do ombro do jogador para uma vista mais favorável do puzzle em questão(Utilizador fica com o rato desbloqueado e pode mexer no puzzle livremente, para sair do puzzle clicar numa tecla?).
 #### Puzzles:
 - Ovos da páscoa espalhados pelo jogo todo (easter eggs literalmente), recebe um prémio ao coletá-los a todos
 - Puzzle de conectar peças para criar a imagem correta
