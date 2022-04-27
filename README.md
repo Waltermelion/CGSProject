@@ -13,8 +13,10 @@ acontece quando tentam.
 que ocorrem durante o jogo. Pode
 ser uma sequência linear e prédefinida, ou ramificada e dinâmica.
 
-• Estética: Para a estética do jogo pensamos num ambiente bastante colorido e focado no adjetivo adorável devido a termos escolhido o jogo ser uma busca por ovos da páscoa, sendo estes normalmente cheios de cores para atrair as crianças ao mesmo tempo que é um scape room. Os objetos teriam um estilo mais animado não tão realista, queremos assim que transmita uma espécie de sufoco ao jogador que o faça querer sair do local e voltar á realidade que só depois de tudo feito poderá conseguir o que deseja, sair daquele “pais das maravilhas”. Para ajudar a reforçar esta ideia e a dar mais impacto o som de fundo seria de musicas infantis e sons também relacionados.
+## Estética: 
+Para a estética do jogo pensamos num ambiente bastante colorido e focado no adjetivo adorável devido a termos escolhido o jogo ser uma busca por ovos da páscoa, sendo estes normalmente cheios de cores para atrair as crianças ao mesmo tempo que é um scape room. Os objetos teriam um estilo mais animado não tão realista, queremos assim que transmita uma espécie de sufoco ao jogador que o faça querer sair do local e voltar á realidade que só depois de tudo feito poderá conseguir o que deseja, sair daquele “pais das maravilhas”. Para ajudar a reforçar esta ideia e a dar mais impacto o som de fundo seria de musicas infantis e sons também relacionados.
 
-• Tecnologia: Refere-se a qualquer material e método de interação que permite
+## Tecnologia: 
+Refere-se a qualquer material e método de interação que permite
 jogar o jogo. As tecnologias escolhidas podem permitir ou impedir certos
 elementos.
