@@ -25,7 +25,7 @@ Para a estética do jogo pensamos num ambiente bastante colorido e focado no adj
 - Botão 1 do rato - interação com o ambiente e os puzzles
 - Esc - Menu de pausa
 
-#### Misc
+#### Misc:
 - Portas abrem-se ao completar puzzle
 - Completar uns puzzles desbloqueia outros ou permite continuar outros
 - Coletar ovos da páscoa desbloqueia um prémio no fim
