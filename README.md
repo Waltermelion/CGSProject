@@ -2,11 +2,15 @@
 CGS Project for university
 
 ## Mecânicas: 
-Refere-se às regras e
-processos do jogo. Descrevem o
-objetivo do jogo, como os jogadores
-podem ou não o alcançar, e o que
-acontece quando tentam.
+O jogo passa-se em `terceira pessoa` num mundo `3D`, camara `Over the Shoulder`, movimento `WASD`, controla-se a camara com o rato, ao aproximar de um puzzle a camara translata do ombro do jogador para uma vista mais favorável do puzzle em questão.
+#### Puzzles:
+- Ovos da páscoa espalhados pelo jogo todo (easter eggs literalmente), recebe um prémio ao coletá-los a todos
+- Puzzle de conectar peças para criar a imagem correta
+- Rodar certas peças para uma linha se conectar
+- Algo abre para revelar uma peça...
+- Derreter um ovo ou coelho de chocolate para revelar uma chave/peça
+- Jogo da memória
+- Maybe more?
 
 ## Narrativa: 
 É a sequência de eventos
