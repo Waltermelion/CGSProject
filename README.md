@@ -33,3 +33,5 @@ Para a estética do jogo pensamos num ambiente bastante colorido e focado no adj
 - Jogador pode interagir com todos os puzzles mas só os pode completar quando todos os requerimentos desse puzzle estiverem completos
 - Sair do jogo a meio salva o jogo, podendo o jogador retomar os puzzles noutra altura
 - Versão Unity 2020.3.32f1
+#### Packages:
+- Cinemachine
