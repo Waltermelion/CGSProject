@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    private PlayerInput inputManager;
+    private InputManager inputManager;
     public CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -17,7 +17,7 @@ public class PlayerMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inputManager = GetComponent<PlayerInput>();
+        inputManager = GetComponent<InputManager>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 

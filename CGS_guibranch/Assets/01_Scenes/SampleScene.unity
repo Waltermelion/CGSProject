@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 163861217}
   - component: {fileID: 163861218}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 163861213}
   speed: 5
-  gravity: -9
+  gravity: -3
   jumpHeight: 1
 --- !u!114 &163861217
 MonoBehaviour:
