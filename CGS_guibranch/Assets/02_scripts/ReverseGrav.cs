@@ -5,7 +5,7 @@ public class ReverseGrav : MonoBehaviour
 {
     public GameObject player;
     
-    public float downScaler = 5f;
+    public float downScaler = 10f;
 
     private bool isReversed;
 
