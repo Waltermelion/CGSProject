@@ -47,7 +47,7 @@ public class PlayerMotor : MonoBehaviour
 
         if(isGrounded && inputManager.onFoot.Run.IsPressed())
         {
-            controller.Move(transform.TransformDirection(moveDirection) * speed * 100 *Time.deltaTime);
+            controller.Move(transform.TransformDirection(moveDirection) * speed * sprint *Time.deltaTime);
         }
         
     }
