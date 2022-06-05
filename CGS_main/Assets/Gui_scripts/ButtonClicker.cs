@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ButtonClicker : MonoBehaviour
 {
-    public Animator bttn;
     public InputManager ipt;
 
     public float dist = 5f;
@@ -15,7 +14,8 @@ public class ButtonClicker : MonoBehaviour
             if (ipt.onFoot.Interact.triggered)
             {
                 Debug.Log("you are looking at the button");
-                bttn.SetTrigger("BotaoCarregado");
+                hit.collider.GetComponent<Animator>().SetTrigger("BotaoCarregado");
+                hit.collider.GetComponent<ButtonInd>().iHaveBeenClicked = true;
             }
         }
     }

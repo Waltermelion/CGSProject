@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     private InputManager inputManager;
-    private CharacterController controller;
+    public CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
     public float speed = 5f;
@@ -47,7 +47,7 @@ public class PlayerMotor : MonoBehaviour
 
         if(isGrounded && inputManager.onFoot.Run.IsPressed())
         {
-            controller.Move(transform.TransformDirection(moveDirection) * speed * 100 *Time.deltaTime);
+            controller.Move(transform.TransformDirection(moveDirection) * sprint *Time.deltaTime);
         }
         
     }

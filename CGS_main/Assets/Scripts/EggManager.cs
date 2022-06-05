@@ -21,7 +21,7 @@ public class EggManager : Collision2secção
     }
     private void Update()
     {
-        if (paredeCai == false) 
+        if (paredeCai == false)
         {
             for (int i = 0; i < eggs.Length; i++)
             {
@@ -32,9 +32,10 @@ public class EggManager : Collision2secção
             }
 
             if (counter == eggs.Length)
-            {            
+            {
                 botao.SetActive(true);
             }
+
             counter = 0;
         }
     }
