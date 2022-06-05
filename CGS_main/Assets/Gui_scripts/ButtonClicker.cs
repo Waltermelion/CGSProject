@@ -15,7 +15,7 @@ public class ButtonClicker : MonoBehaviour
             {
                 Debug.Log("you are looking at the button");
                 hit.collider.GetComponent<Animator>().SetTrigger("BotaoCarregado");
-                //hit.collider
+                hit.collider.GetComponent<ButtonInd>().iHaveBeenClicked = true;
             }
         }
     }

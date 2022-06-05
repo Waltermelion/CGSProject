@@ -5,4 +5,5 @@ using UnityEngine;
 public class ButtonInd : MonoBehaviour
 {
     public bool iHaveBeenClicked = false;
+    public bool iHaveBeenChecked = false;
 }
