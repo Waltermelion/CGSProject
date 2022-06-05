@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Button
+  - StopObject
+  - Dust
+  - Execute
+  - Wrong
+  - ElevatorButton
+  - Book
+  - TeleportTo
+  - Teleport
   layers:
   - Default
   - TransparentFX
@@ -24,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - teleport
   - 
   - 
   - 

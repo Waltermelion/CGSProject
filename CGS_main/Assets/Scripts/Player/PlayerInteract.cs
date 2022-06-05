@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -132,12 +130,18 @@ public class PlayerInteract : MonoBehaviour
 
     [Header("Tutorial")]
     public GameObject tutorial;
+
+    [Header("Teleport")] [SerializeField] private LayerMask teleport;
+    public Transform teleportTo;
+    public  CharacterController characterController;
+    //private bool canTp = false;
     #endregion
 
-    void Start()
+    private void Start()
     {
         cam = GetComponent<PlayerLook>().cam;
         inputManager = GetComponent<InputManager>();
+        characterController = GetComponent<CharacterController>();
 
         Time.timeScale = 0f;
 
@@ -153,17 +157,10 @@ public class PlayerInteract : MonoBehaviour
         livro.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
 
         if (keypad.activeInHierarchy)
-        {
-            player.GetComponent<CharacterController>().enabled = false;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-        if (book.activeInHierarchy)
         {
             player.GetComponent<CharacterController>().enabled = false;
             Cursor.visible = true;
@@ -212,6 +209,7 @@ public class PlayerInteract : MonoBehaviour
         Calculadora();
         Tutorial();
         Inventory();
+        Teleport();
     }
 
     #region PickUpObjects
@@ -376,27 +374,12 @@ public class PlayerInteract : MonoBehaviour
     #endregion
 
     #region Book
-    void Book()
+    private void Book()
     {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo, distance, BookClick))
+        if (inputManager.onFoot.ExitBook.triggered)
         {
-            if (inputManager.onFoot.Interact.triggered)
-            {
-                Time.timeScale = 0f;
-                book.SetActive(true);
-            }
+            book.SetActive(false);
         }
-    }
-
-    private void ExitBook()
-    {
-        book.SetActive(false);
-        player.GetComponent<CharacterController>().enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
     }
     #endregion
 
@@ -694,19 +677,16 @@ public class PlayerInteract : MonoBehaviour
     #region Botao
     private void Botao()
     {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        var ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo, distance, botaoLayer))
         {
             if (inputManager.onFoot.Interact.triggered)
-            {
                 botaoAbre = !botaoAbre;
-                botao.GetComponent<Animator>().SetBool("BotaoCarregado", botaoAbre);
-
-                paredeCai = !paredeCai;
-                parede.GetComponent<Animator>().SetBool("ParedeCai", paredeCai);
-            }
+            botao.GetComponent<Animator>().SetBool("BotaoCarregado", botaoAbre);
+            paredeCai = !paredeCai;
+            parede.GetComponent<Animator>().SetBool("ParedeCai", paredeCai);
         }
     }
     #endregion Botao
@@ -754,11 +734,17 @@ public class PlayerInteract : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var item = other.GetComponent<Item>();
-        if (item)
+        if (item.name == "Calculator")
         {
             inventory.AddItem(item.item, 1);
             Destroy(item.gameObject);
             calculator.SetActive(true);
+        }
+
+        if (item.name == "Livro")
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(item.gameObject);
             livro.SetActive(true);
         }
     }
@@ -777,7 +763,26 @@ public class PlayerInteract : MonoBehaviour
     public void LivroClick()
     {
         book.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
         panelInventory.SetActive(false);
     }
+    #endregion
+
+    #region Teleport
+
+    private void Teleport()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo, distance, teleport))
+        {
+            if (inputManager.onFoot.Teleport.IsPressed())
+            {
+                characterController.transform.position = teleportTo.transform.position;
+            }
+        }
+    }
+
     #endregion
 }

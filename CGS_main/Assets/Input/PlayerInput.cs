@@ -98,6 +98,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExitBook"",
+                    ""type"": ""Button"",
+                    ""id"": ""020223a4-97a2-4448-81c3-0058342c70c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport"",
+                    ""type"": ""Button"",
+                    ""id"": ""87dced05-ede5-4b22-b01c-ff7ee3097f06"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -362,6 +380,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8abfb22a-bf07-45d4-bc97-c23bdceccb9c"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExitBook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35d3b806-bc6e-42a5-ad64-360a275e151a"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Teleport"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -957,6 +997,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnFoot_canPickUp = m_OnFoot.FindAction("canPickUp", throwIfNotFound: true);
         m_OnFoot_Throw = m_OnFoot.FindAction("Throw", throwIfNotFound: true);
         m_OnFoot_Inventory = m_OnFoot.FindAction("Inventory", throwIfNotFound: true);
+        m_OnFoot_ExitBook = m_OnFoot.FindAction("ExitBook", throwIfNotFound: true);
+        m_OnFoot_Teleport = m_OnFoot.FindAction("Teleport", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1036,6 +1078,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_canPickUp;
     private readonly InputAction m_OnFoot_Throw;
     private readonly InputAction m_OnFoot_Inventory;
+    private readonly InputAction m_OnFoot_ExitBook;
+    private readonly InputAction m_OnFoot_Teleport;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -1048,6 +1092,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @canPickUp => m_Wrapper.m_OnFoot_canPickUp;
         public InputAction @Throw => m_Wrapper.m_OnFoot_Throw;
         public InputAction @Inventory => m_Wrapper.m_OnFoot_Inventory;
+        public InputAction @ExitBook => m_Wrapper.m_OnFoot_ExitBook;
+        public InputAction @Teleport => m_Wrapper.m_OnFoot_Teleport;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1081,6 +1127,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Inventory.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInventory;
+                @ExitBook.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnExitBook;
+                @ExitBook.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnExitBook;
+                @ExitBook.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnExitBook;
+                @Teleport.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnTeleport;
+                @Teleport.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnTeleport;
+                @Teleport.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnTeleport;
             }
             m_Wrapper.m_OnFootActionsCallbackInterface = instance;
             if (instance != null)
@@ -1109,6 +1161,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @ExitBook.started += instance.OnExitBook;
+                @ExitBook.performed += instance.OnExitBook;
+                @ExitBook.canceled += instance.OnExitBook;
+                @Teleport.started += instance.OnTeleport;
+                @Teleport.performed += instance.OnTeleport;
+                @Teleport.canceled += instance.OnTeleport;
             }
         }
     }
@@ -1273,6 +1331,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnCanPickUp(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnExitBook(InputAction.CallbackContext context);
+        void OnTeleport(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
