@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -134,27 +136,14 @@ public class PlayerInteract : MonoBehaviour
     [Header("Monitor")]
     [SerializeField] private LayerMask left;
     [SerializeField] private LayerMask right;
+    [SerializeField] private LayerMask Up;
+    [SerializeField] private LayerMask Down;
 
     public GameObject Camera;
 
-    [Header("Xilofone")]
-    public LayerMask notaDo;
-    public LayerMask notaRe;
-    public LayerMask notaMi;
-    public LayerMask notaFa;
-    public LayerMask notaSol;
-    public LayerMask notaLa;
-    public LayerMask notaSi;
-    public LayerMask notaDoA;
-    public AudioSource Do;
-    public AudioSource Re;
-    public AudioSource Mi;
-    public AudioSource Fa;
-    public AudioSource Sol;
-    public AudioSource La;
-    public AudioSource Si;
-    public AudioSource DoA;
-
+    [Header("Xilofone")] 
+    public LayerMask xilofone;
+    public GameObject xilofoneCanvas;
 
     //private bool canTp = false;
     #endregion
@@ -176,6 +165,7 @@ public class PlayerInteract : MonoBehaviour
         panelInventory.SetActive(false);
         calculator.SetActive(false);
         livro.SetActive(false);
+        xilofoneCanvas.SetActive(false);
     }
 
     private void Update()
@@ -210,6 +200,13 @@ public class PlayerInteract : MonoBehaviour
         }
 
         if (tutorial.activeInHierarchy)
+        {
+            player.GetComponent<CharacterController>().enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (xilofoneCanvas.activeInHierarchy)
         {
             player.GetComponent<CharacterController>().enabled = false;
             Cursor.visible = true;
@@ -812,80 +809,48 @@ public class PlayerInteract : MonoBehaviour
                 Camera.transform.Rotate(0.5f, 0.0f, 0.0f);
             }
         }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, Up))
+        {
+            if (inputManager.onFoot.Throw.IsPressed())
+            {
+                Camera.transform.Rotate(0f, -0.5f, 0.0f);
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, Down))
+        {
+            if (inputManager.onFoot.Throw.IsPressed())
+            {
+                Camera.transform.Rotate(0f, 0.5f, 0.0f);
+            }
+        }
     }
 
     #endregion
 
     #region Xilofone
 
-    private void Xilofone()
+    public void Xilofone()
     {
         var ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, distance, notaDo))
+        if (Physics.Raycast(ray, out hitInfo, distance, xilofone))
         {
             if (inputManager.onFoot.Throw.triggered)
             {
-                Do.Play();
+                xilofoneCanvas.SetActive(true);
             }
         }
+    }
 
-        if (Physics.Raycast(ray, out hitInfo, distance, notaRe))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                Re.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaMi))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                Mi.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaFa))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                Fa.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaSol))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                Sol.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaLa))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                La.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaSi))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                Si.Play();
-            }
-        }
-
-        if (Physics.Raycast(ray, out hitInfo, distance, notaDoA))
-        {
-            if (inputManager.onFoot.Throw.triggered)
-            {
-                DoA.Play();
-            }
-        }
+    public void ExitXilofone()
+    {
+        xilofoneCanvas.SetActive(false);
+        player.GetComponent<CharacterController>().enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     #endregion
 }
