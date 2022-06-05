@@ -13,6 +13,7 @@ TagManager:
   - Book
   - TeleportTo
   - Teleport
+  - "D\xF3"
   layers:
   - Default
   - TransparentFX
@@ -35,14 +36,14 @@ TagManager:
   - 
   - left
   - right
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - NotaDo
+  - NotaRE
+  - NotaMi
+  - NotaFa
+  - NotaSol
+  - NotaLa
+  - NotaSi
+  - NotaDoA
   - 
   - 
   - 

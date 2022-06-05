@@ -131,11 +131,30 @@ public class PlayerInteract : MonoBehaviour
     [Header("Tutorial")]
     public GameObject tutorial;
 
-    [Header("Monitor")] 
+    [Header("Monitor")]
     [SerializeField] private LayerMask left;
     [SerializeField] private LayerMask right;
 
     public GameObject Camera;
+
+    [Header("Xilofone")]
+    public LayerMask notaDo;
+    public LayerMask notaRe;
+    public LayerMask notaMi;
+    public LayerMask notaFa;
+    public LayerMask notaSol;
+    public LayerMask notaLa;
+    public LayerMask notaSi;
+    public LayerMask notaDoA;
+    public AudioSource Do;
+    public AudioSource Re;
+    public AudioSource Mi;
+    public AudioSource Fa;
+    public AudioSource Sol;
+    public AudioSource La;
+    public AudioSource Si;
+    public AudioSource DoA;
+
 
     //private bool canTp = false;
     #endregion
@@ -212,6 +231,7 @@ public class PlayerInteract : MonoBehaviour
         Tutorial();
         Inventory();
         Monitor();
+        Xilofone();
     }
 
     #region PickUpObjects
@@ -794,5 +814,78 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Xilofone
+
+    private void Xilofone()
+    {
+        var ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaDo))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Do.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaRe))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Re.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaMi))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Mi.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaFa))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Fa.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaSol))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Sol.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaLa))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                La.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaSi))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                Si.Play();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, notaDoA))
+        {
+            if (inputManager.onFoot.Throw.triggered)
+            {
+                DoA.Play();
+            }
+        }
+    }
     #endregion
 }
