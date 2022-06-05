@@ -131,9 +131,12 @@ public class PlayerInteract : MonoBehaviour
     [Header("Tutorial")]
     public GameObject tutorial;
 
-    [Header("Teleport")] [SerializeField] private LayerMask teleport;
-    public Transform teleportTo;
-    public  CharacterController characterController;
+    [Header("Monitor")] 
+    [SerializeField] private LayerMask left;
+    [SerializeField] private LayerMask right;
+
+    public GameObject Camera;
+
     //private bool canTp = false;
     #endregion
 
@@ -141,7 +144,6 @@ public class PlayerInteract : MonoBehaviour
     {
         cam = GetComponent<PlayerLook>().cam;
         inputManager = GetComponent<InputManager>();
-        characterController = GetComponent<CharacterController>();
 
         Time.timeScale = 0f;
 
@@ -209,7 +211,7 @@ public class PlayerInteract : MonoBehaviour
         Calculadora();
         Tutorial();
         Inventory();
-        Teleport();
+        Monitor();
     }
 
     #region PickUpObjects
@@ -768,18 +770,26 @@ public class PlayerInteract : MonoBehaviour
     }
     #endregion
 
-    #region Teleport
+    #region Monitor
 
-    private void Teleport()
+    private void Monitor()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, distance, teleport))
+        if (Physics.Raycast(ray, out hitInfo, distance, left))
         {
-            if (inputManager.onFoot.Teleport.IsPressed())
+            if (inputManager.onFoot.Throw.IsPressed())
             {
-                characterController.transform.position = teleportTo.transform.position;
+                Camera.transform.Rotate(-0.5f, 0.0f, 0.0f);
+            }
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, distance, right))
+        {
+            if (inputManager.onFoot.Throw.IsPressed())
+            {
+                Camera.transform.Rotate(0.5f, 0.0f, 0.0f);
             }
         }
     }
