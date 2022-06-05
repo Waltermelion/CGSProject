@@ -6,23 +6,23 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     //Button Puzzle
+    public bool puzzleStart;
     private bool puzzleDone;
     public int ammountBttn;
     public GameObject[] buttonsClicked;
     public Animator doorOpen;
     
     //Timer
-    public GameObject countDown;
     private float seconds = 30;
     private bool timeSeconds = false;
 
-    public GameObject Zero;
+    [SerializeField] private AudioSource timerS;
+    [SerializeField] private AudioSource winS;
+    [SerializeField] private AudioSource loseS;
     
     private void Start()
     {
         ammountBttn = 10;
-        
-        Zero.SetActive(false);
     }
     private void Update()
     {
@@ -50,17 +50,21 @@ public class ButtonManager : MonoBehaviour
         }
         
         //Timer
-        if (timeSeconds == false && seconds > 0)
+        if (puzzleStart)
         {
-            StartCoroutine(CounterSecond());
-        }
+            timerS.Play ();
+            loseS.PlayDelayed(timerS.clip.length);
+            if (timeSeconds == false && seconds > 0)
+            {
+                StartCoroutine(CounterSecond());
+            }
 
-        if (seconds <= 0)
-        {
-                countDown.SetActive(false);
+            if (seconds <= 0)
+            {
+                puzzleStart = false;
+            }
         }
     }
-
     IEnumerator CounterSecond()
     {
         timeSeconds = true;
