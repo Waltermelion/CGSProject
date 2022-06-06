@@ -146,9 +146,9 @@ public class PlayerInteract : MonoBehaviour
     public GameObject xilofoneCanvas;
 
     [Header("Audio")] 
-    public AudioSource pickup;
-    public AudioSource letgo;
-    
+    public AudioSource pickupSound;
+    public AudioSource letgoSound;
+
     //private bool canTp = false;
     #endregion
 
@@ -261,7 +261,7 @@ public class PlayerInteract : MonoBehaviour
                 currentObject.transform.localPosition = Vector3.zero;
                 currentObject.transform.localEulerAngles = Vector3.zero;
                 
-                pickup.Play();
+                pickupSound.Play();
 
                 foreach (Collider collider in currentObject.GetComponents<Collider>())
                 {
@@ -302,7 +302,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (inputManager.onFoot.Throw.triggered)
         {
-            letgo.Play();
+            letgoSound.Play();
             currentObject.transform.parent = null;
 
             currentObjectRb.isKinematic = false;

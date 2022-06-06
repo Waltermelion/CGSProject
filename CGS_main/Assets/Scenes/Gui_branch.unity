@@ -35865,6 +35865,10 @@ PrefabInstance:
       propertyPath: bttnmgr
       value: 
       objectReference: {fileID: 564272516}
+    - target: {fileID: 1050719941798529822, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1618078944035870583, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: inventory
       value: 
@@ -36066,12 +36070,8 @@ PrefabInstance:
       value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: 5112681778952530154, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112681778952530154, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: sprint
-      value: 1.2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5346490930531946718, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_Name
