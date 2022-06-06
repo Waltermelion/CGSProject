@@ -35736,6 +35736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 453486496}
     m_Modifications:
+    - target: {fileID: 1460793793069217050, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: bttnmgr
+      value: 
+      objectReference: {fileID: 564272516}
     - target: {fileID: 1460793793069217055, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Rosa
       value: 
@@ -35752,6 +35756,10 @@ PrefabInstance:
       propertyPath: OAzul
       value: 
       objectReference: {fileID: 1931152253}
+    - target: {fileID: 1460793793463764492, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: bttnmgr
+      value: 
+      objectReference: {fileID: 564272516}
     - target: {fileID: 1460793793488456272, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Vermelho
       value: 
@@ -35760,6 +35768,14 @@ PrefabInstance:
       propertyPath: OVermelho
       value: 
       objectReference: {fileID: 382899672}
+    - target: {fileID: 1460793793488456303, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: bttnmgr
+      value: 
+      objectReference: {fileID: 564272516}
+    - target: {fileID: 1460793793521689136, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: bttnmgr
+      value: 
+      objectReference: {fileID: 564272516}
     - target: {fileID: 1460793793521689141, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Amarelo
       value: 
@@ -35816,6 +35832,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1460793794774654189, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: bttnmgr
+      value: 
+      objectReference: {fileID: 564272516}
     - target: {fileID: 1460793794774654190, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Verde
       value: 
@@ -35942,6 +35962,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 983569463}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: letgo
+      value: 
+      objectReference: {fileID: 5112681779075047181}
+    - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: livro
       value: 
       objectReference: {fileID: 2059724782}
@@ -35957,6 +35981,10 @@ PrefabInstance:
       propertyPath: parede
       value: 
       objectReference: {fileID: 2108223067}
+    - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 5112681779075047173}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: prefab
       value: 
@@ -36069,6 +36097,11 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 7432525010857143147, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+--- !u!82 &5112681779075047173 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6650164350263996978, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+  m_PrefabInstance: {fileID: 5112681779075047171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5112681779075047177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5112681778952530150, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
@@ -36080,6 +36113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc3491cd0eee040bb60ee3a242bad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &5112681779075047181 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8031732351768411791, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+  m_PrefabInstance: {fileID: 5112681779075047171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7975564211718123458
 PrefabInstance:
   m_ObjectHideFlags: 0
