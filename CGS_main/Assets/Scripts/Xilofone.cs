@@ -16,16 +16,22 @@ public class Xilofone : MonoBehaviour
     public AudioSource La;
     public AudioSource Si;
     public AudioSource DoA;
+
+    public GameObject Acertou;
+
     // Start is called before the first frame update
     void Start()
     {
         Sequece.SendColorValue += AddValueAndCheckSequence;
         correctSequence = "12345678";
         currentSequence = "";
+
+        Acertou.SetActive(false);
     }
 
     private void AddValueAndCheckSequence(string buttonColor)
     {
+
         switch (buttonColor)
         {
             case "Blue":
@@ -69,10 +75,7 @@ public class Xilofone : MonoBehaviour
         else if (currentSequence == correctSequence)
         {
             currentSequence = "";
-            xilofoneCanvas.SetActive(false);   
-            player.GetComponent<CharacterController>().enabled = true;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Acertou.SetActive(true);
         }
     }
 
@@ -80,4 +83,5 @@ public class Xilofone : MonoBehaviour
     {
         Sequece.SendColorValue -= AddValueAndCheckSequence;
     }
+
 }

@@ -144,6 +144,7 @@ public class PlayerInteract : MonoBehaviour
     [Header("Xilofone")] 
     public LayerMask xilofone;
     public GameObject xilofoneCanvas;
+    public GameObject Acertou;
 
     //private bool canTp = false;
     #endregion
@@ -838,7 +839,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, distance, xilofone))
         {
-            if (inputManager.onFoot.Throw.triggered)
+            if (inputManager.onFoot.canPickUp.triggered)
             {
                 xilofoneCanvas.SetActive(true);
             }
@@ -847,6 +848,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void ExitXilofone()
     {
+        Acertou.SetActive(false);
         xilofoneCanvas.SetActive(false);
         player.GetComponent<CharacterController>().enabled = true;
         Cursor.visible = false;
