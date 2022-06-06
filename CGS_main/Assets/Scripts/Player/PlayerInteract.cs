@@ -66,11 +66,11 @@ public class PlayerInteract : MonoBehaviour
     public Text text;
     public string answer = "1796";
 
-    [Header("AnimaçãoDoor")]
+    [Header("Animaï¿½ï¿½oDoor")]
     public GameObject door;
     private bool isOpen;
 
-    [Header("AnimaçãoCofre")]
+    [Header("Animaï¿½ï¿½oCofre")]
     public GameObject cofreDoor;
     private bool cofreAberto;
 
@@ -88,7 +88,7 @@ public class PlayerInteract : MonoBehaviour
     public GameObject elevador;
     private bool up;
 
-    [Header("AnimaçãoQuadro")]
+    [Header("Animaï¿½ï¿½oQuadro")]
     public GameObject quadroDoor;
     private bool quadroCai;
 
@@ -102,15 +102,15 @@ public class PlayerInteract : MonoBehaviour
     public GameObject gaveta;
     private bool gavetaAbre;
 
-    [Header("Animaçao Botao")]
+    [Header("Animaï¿½ao Botao")]
     public GameObject botao;
     private bool botaoAbre;
 
-    [Header("Animação Parede")]
+    [Header("Animaï¿½ï¿½o Parede")]
     public GameObject parede;
     private bool paredeCai;
 
-    [Header("Animação Botao3")]
+    [Header("Animaï¿½ï¿½o Botao3")]
     public GameObject roda;
     private bool casaRoda;
 
@@ -146,6 +146,10 @@ public class PlayerInteract : MonoBehaviour
     public GameObject xilofoneCanvas;
     public GameObject Acertou;
 
+    [Header("Audio")] 
+    public AudioSource pickupSound;
+    public AudioSource letgoSound;
+
     //private bool canTp = false;
     #endregion
 
@@ -166,7 +170,7 @@ public class PlayerInteract : MonoBehaviour
         panelInventory.SetActive(false);
         calculator.SetActive(false);
         livro.SetActive(false);
-        xilofoneCanvas.SetActive(false);
+//        xilofoneCanvas.SetActive(false);
     }
 
     private void Update()
@@ -207,12 +211,12 @@ public class PlayerInteract : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        if (xilofoneCanvas.activeInHierarchy)
+/*        if (xilofoneCanvas.activeInHierarchy)
         {
             player.GetComponent<CharacterController>().enabled = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-        }
+        }*/
 
         PickUpObject();
         Throw();
@@ -257,6 +261,8 @@ public class PlayerInteract : MonoBehaviour
                 currentObject.transform.parent = objectHolder;
                 currentObject.transform.localPosition = Vector3.zero;
                 currentObject.transform.localEulerAngles = Vector3.zero;
+                
+                pickupSound.Play();
 
                 foreach (Collider collider in currentObject.GetComponents<Collider>())
                 {
@@ -297,6 +303,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (inputManager.onFoot.Throw.triggered)
         {
+            letgoSound.Play();
             currentObject.transform.parent = null;
 
             currentObjectRb.isKinematic = false;
@@ -855,4 +862,5 @@ public class PlayerInteract : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
     #endregion
+
 }

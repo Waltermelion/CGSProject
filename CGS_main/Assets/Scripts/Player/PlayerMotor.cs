@@ -9,11 +9,14 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 playerVelocity;
     private bool isGrounded;
     public float speed = 5f;
-    public float sprint = 7f;
+    public float sprint = 2f;
     public float gravity = -9.0f;
     public float jumpHeight = 3f;
 
-
+    [Header("Audio")] 
+    public AudioSource footStepSound;
+    public float audioPlayRate = 1f;
+    private float nextTimeToPlay = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +30,6 @@ public class PlayerMotor : MonoBehaviour
     void Update()
     {
         isGrounded = controller.isGrounded;
-        
-
     }
 
     //receive the inputs for our InputManager.cs and apply them to our character controller.
@@ -39,8 +40,11 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.z = input.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
-
-
+        if (inputManager.onFoot.Move.IsPressed() && Time.time >= nextTimeToPlay)
+        {
+            nextTimeToPlay = Time.time + 1f / audioPlayRate;
+            footStepSound.Play();
+        }
         if(isGrounded && playerVelocity.y < 0)
             playerVelocity.y =  -2f;
         controller.Move(playerVelocity * Time.deltaTime);
