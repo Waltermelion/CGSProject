@@ -36050,10 +36050,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2095579237}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-      propertyPath: maxThrowForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: panelInventory
       value: 
       objectReference: {fileID: 1903180487}
