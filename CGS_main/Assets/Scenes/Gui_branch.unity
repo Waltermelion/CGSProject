@@ -36093,6 +36093,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8031732351768411791, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 7432525010857143147, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
