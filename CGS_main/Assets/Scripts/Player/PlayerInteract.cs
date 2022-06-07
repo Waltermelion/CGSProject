@@ -147,8 +147,9 @@ public class PlayerInteract : MonoBehaviour
     public GameObject Acertou;
 
     [Header("Audio")] 
-    public AudioSource pickupSound;
-    public AudioSource letgoSound;
+    public AudioClip pickupSound;
+    public AudioClip letgoSound;
+    public AudioSource audioSource2;
 
     //private bool canTp = false;
     #endregion
@@ -262,7 +263,7 @@ public class PlayerInteract : MonoBehaviour
                 currentObject.transform.localPosition = Vector3.zero;
                 currentObject.transform.localEulerAngles = Vector3.zero;
                 
-                pickupSound.Play();
+                audioSource2.PlayOneShot(pickupSound);
 
                 foreach (Collider collider in currentObject.GetComponents<Collider>())
                 {
@@ -303,7 +304,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (inputManager.onFoot.Throw.triggered)
         {
-            letgoSound.Play();
+            audioSource2.PlayOneShot(letgoSound);
             currentObject.transform.parent = null;
 
             currentObjectRb.isKinematic = false;

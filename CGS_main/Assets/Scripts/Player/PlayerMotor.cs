@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerMotor : MonoBehaviour
 {
     private InputManager inputManager;
@@ -14,7 +13,10 @@ public class PlayerMotor : MonoBehaviour
     public float jumpHeight = 3f;
 
     [Header("Audio")] 
-    public AudioSource footStepSound;
+    public AudioClip footStepSound;
+    public AudioClip jumpSound;
+    public AudioSource audioSource1;
+    
     public float audioPlayRate = 1f;
     private float nextTimeToPlay = 0f;
 
@@ -40,10 +42,10 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.z = input.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
-        if (inputManager.onFoot.Move.IsPressed() && Time.time >= nextTimeToPlay)
+        if (inputManager.onFoot.Move.IsPressed() && Time.time >= nextTimeToPlay && isGrounded)
         {
             nextTimeToPlay = Time.time + 1f / audioPlayRate;
-            footStepSound.Play();
+            audioSource1.PlayOneShot(footStepSound);
         }
         if(isGrounded && playerVelocity.y < 0)
             playerVelocity.y =  -2f;
@@ -61,6 +63,7 @@ public class PlayerMotor : MonoBehaviour
         if(isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+            audioSource1.PlayOneShot(jumpSound);
         }
     }
 }

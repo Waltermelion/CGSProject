@@ -35865,10 +35865,6 @@ PrefabInstance:
       propertyPath: bttnmgr
       value: 
       objectReference: {fileID: 564272516}
-    - target: {fileID: 1050719941798529822, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1618078944035870583, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: inventory
       value: 
@@ -35968,7 +35964,7 @@ PrefabInstance:
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: letgo
       value: 
-      objectReference: {fileID: 5112681779075047181}
+      objectReference: {fileID: 0}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: livro
       value: 
@@ -35988,7 +35984,7 @@ PrefabInstance:
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: pickup
       value: 
-      objectReference: {fileID: 5112681779075047173}
+      objectReference: {fileID: 0}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: prefab
       value: 
@@ -36065,10 +36061,6 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 3.67
       objectReference: {fileID: 0}
-    - target: {fileID: 5112681778952530154, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-      propertyPath: sprint
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5346490930531946718, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_Name
       value: homemparado
@@ -36089,19 +36081,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8031732351768411791, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 7432525010857143147, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
---- !u!82 &5112681779075047173 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6650164350263996978, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-  m_PrefabInstance: {fileID: 5112681779075047171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5112681779075047177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5112681778952530150, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
@@ -36113,11 +36098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc3491cd0eee040bb60ee3a242bad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &5112681779075047181 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8031732351768411791, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-  m_PrefabInstance: {fileID: 5112681779075047171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7975564211718123458
 PrefabInstance:
   m_ObjectHideFlags: 0
