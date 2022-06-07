@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11681,6 +11681,10 @@ PrefabInstance:
       propertyPath: ambient
       value: 
       objectReference: {fileID: 980031181}
+    - target: {fileID: 73637031112365861, guid: 8cf6b3863f37c194a809577b1214183b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1000415011295934848, guid: 8cf6b3863f37c194a809577b1214183b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.76
@@ -11691,7 +11695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2089180789327068280, guid: 8cf6b3863f37c194a809577b1214183b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708444120004165202, guid: 8cf6b3863f37c194a809577b1214183b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15311,6 +15315,22 @@ PrefabInstance:
       propertyPath: pilarButoes
       value: 
       objectReference: {fileID: 2139996815}
+    - target: {fileID: 2424609302336518118, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: Zero
+      value: 
+      objectReference: {fileID: 2056336982}
+    - target: {fileID: 2424609302336518118, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1551710667}
+    - target: {fileID: 2424609302336518118, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: countDown
+      value: 
+      objectReference: {fileID: 2065836568}
+    - target: {fileID: 2424609302336518118, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
+      propertyPath: counterZero
+      value: 
+      objectReference: {fileID: 313795453}
     - target: {fileID: 4717904890050120292, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -15321,11 +15341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4717904890050120292, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.499
+      value: 1.468
       objectReference: {fileID: 0}
     - target: {fileID: 4717904890050120292, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1964513
+      value: 1.319
       objectReference: {fileID: 0}
     - target: {fileID: 4717904890050120292, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19020,7 +19040,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74c6efb44b52de24ebcce0664a0106e7, type: 2}
+  - {fileID: 2100000, guid: 6ac2c6b99d3d62d478f869f12ae7c2ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19290,7 +19310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74c6efb44b52de24ebcce0664a0106e7, type: 2}
+  - {fileID: 2100000, guid: 6ac2c6b99d3d62d478f869f12ae7c2ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20113,7 +20133,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dc0bd745a937a24da413d707bbc7592, type: 2}
+  - {fileID: 2100000, guid: ed80def3a29f8304a8be385f492a88a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
