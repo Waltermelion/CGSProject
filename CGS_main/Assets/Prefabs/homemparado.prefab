@@ -1138,6 +1138,7 @@ MonoBehaviour:
   Acertou: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: 681ae28c29d0aef4eb9161f8492d73e5, type: 3}
   letgoSound: {fileID: 8300000, guid: a06585b44b2e3bb46ab5717e7bb64ff7, type: 3}
+  keypadClickSound: {fileID: 8300000, guid: 2ec04018be488ff4bb2f0529da921625, type: 3}
   audioSource2: {fileID: 1050719941798529822}
 --- !u!114 &5112681778952530155
 MonoBehaviour:

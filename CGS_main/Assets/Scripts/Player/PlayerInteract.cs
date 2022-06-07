@@ -149,6 +149,7 @@ public class PlayerInteract : MonoBehaviour
     [Header("Audio")] 
     public AudioClip pickupSound;
     public AudioClip letgoSound;
+    public AudioClip keypadClickSound;
     public AudioSource audioSource2;
 
     //private bool canTp = false;
@@ -358,13 +359,15 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    private void Number(int number)
+    public void Number(int number)
     {
         text.text += number.ToString();
+        audioSource2.PlayOneShot(keypadClickSound);
     }
 
-    private void Execute()
+    public void Execute()
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         if (text.text == answer)
         {
             text.text = "Correct";
@@ -383,21 +386,22 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    private void Clear()
+    public void Clear()
     {
         {
             text.text = "";
+            audioSource2.PlayOneShot(keypadClickSound);
         }
     }
 
-    private void Exit()
+    public void Exit()
     {
         text.text = "";
         keypad.SetActive(false);
         player.GetComponent<CharacterController>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
-
+        audioSource2.PlayOneShot(keypadClickSound);
     }
     #endregion
 
@@ -430,10 +434,12 @@ public class PlayerInteract : MonoBehaviour
     public void NumberCofre(int number)
     {
         textCofre.text += number.ToString();
+        audioSource2.PlayOneShot(keypadClickSound);
     }
 
-    private void ExecuteCofre()
+    public void ExecuteCofre()
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         if (textCofre.text == password)
         {
             textCofre.text = "Correct";
@@ -454,20 +460,22 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    private void ClearCofre()
+    public void ClearCofre()
     {
         {
             textCofre.text = "";
+            audioSource2.PlayOneShot(keypadClickSound);
         }
     }
 
-    private void ExitCofre()
+    public void ExitCofre()
     {
         textCofre.text = "";
         cofre.SetActive(false);
         player.GetComponent<CharacterController>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
+        audioSource2.PlayOneShot(keypadClickSound);
     }
     #endregion
 
@@ -507,10 +515,12 @@ public class PlayerInteract : MonoBehaviour
     public void NumberQuadro(int number)
     {
         textQuadro.text += number.ToString();
+        audioSource2.PlayOneShot(keypadClickSound);
     }
 
-    private void ExecuteQuadro()
+    public void ExecuteQuadro()
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         if (textQuadro.text == passwordQuadro)
         {
             textQuadro.text = "Correct";
@@ -529,20 +539,22 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    private void ClearQuadro()
+    public void ClearQuadro()
     {
         {
             textQuadro.text = "";
+            audioSource2.PlayOneShot(keypadClickSound);
         }
     }
 
-    private void ExitQuadro()
+    public void ExitQuadro()
     {
         textQuadro.text = "";
         quadro.SetActive(false);
         player.GetComponent<CharacterController>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
+        audioSource2.PlayOneShot(keypadClickSound);
     }
     #endregion
 
@@ -565,6 +577,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void ClickNumber(int val)
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         Debug.Log($" check val: {val}");
         if (!string.IsNullOrEmpty(_currentInput))
         {
@@ -582,6 +595,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void ClickOperation(string val)
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         Debug.Log($" ClickOperation val: {val}");
         if (_input == 0)
         {
@@ -612,6 +626,7 @@ public class PlayerInteract : MonoBehaviour
     }
     public void ClickEqual(string val)
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         Debug.Log($" ClickEqual val: {val}");
         Calculate();
         _equalIsPressed = true;
@@ -664,6 +679,7 @@ public class PlayerInteract : MonoBehaviour
     // clear all the inputs
     public void ClearInput()
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         _currentInput = "";
         _input = 0;
         _input2 = 0;
@@ -673,6 +689,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void ExitCalculator()
     {
+        audioSource2.PlayOneShot(keypadClickSound);
         _currentInput = "";
         _input = 0;
         _input2 = 0;
