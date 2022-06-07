@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndGameScript : MonoBehaviour
-{
+{/*
     private bool fadeOut;
     private bool faded;
 
@@ -28,5 +28,5 @@ public class EndGameScript : MonoBehaviour
 
         if (faded)
             SceneManager.LoadScene("EndingCredits");
-    }
+    }*/
 }
