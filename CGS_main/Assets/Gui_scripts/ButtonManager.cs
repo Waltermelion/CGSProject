@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
     private bool puzzleDone;
     public int ammountBttn;
     public GameObject[] buttonsClicked;
+    public GameObject pilarButoes;
     public Animator doorOpen;
     
     //Timer
@@ -19,7 +20,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private AudioSource timerS;
     [SerializeField] private AudioSource winS;
     [SerializeField] private AudioSource loseS;
-    
+    [SerializeField] private AudioSource ambient;
+
     private void Start()
     {
         ammountBttn = 10;
@@ -44,6 +46,11 @@ public class ButtonManager : MonoBehaviour
 
         if (ammountBttn == 0 && !puzzleDone)
         {
+            timerS.Stop();
+            winS.Play();
+            loseS.Stop();
+            pilarButoes.SetActive(false);
+            ambient.Play();
             puzzleDone = true;
             doorOpen.SetTrigger("AbrirTres");
             Debug.Log("Puzzle Done");
@@ -52,8 +59,6 @@ public class ButtonManager : MonoBehaviour
         //Timer
         if (puzzleStart)
         {
-            timerS.Play ();
-            loseS.PlayDelayed(timerS.clip.length);
             if (timeSeconds == false && seconds > 0)
             {
                 StartCoroutine(CounterSecond());
@@ -61,7 +66,11 @@ public class ButtonManager : MonoBehaviour
 
             if (seconds <= 0)
             {
+                pilarButoes.SetActive(false);
+                loseS.Play();
+                ambient.Play();
                 puzzleStart = false;
+                seconds = 30;
             }
         }
     }

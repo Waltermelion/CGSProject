@@ -19,6 +19,10 @@ public class Xilofone : MonoBehaviour
 
     public GameObject Acertou;
 
+    [Header("Anima??o Parede")]
+    public GameObject parede;
+    private bool paredeCai;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +80,8 @@ public class Xilofone : MonoBehaviour
         {
             currentSequence = "";
             Acertou.SetActive(true);
+            paredeCai = !paredeCai;
+            parede.GetComponent<Animator>().SetBool("ParedeCai", paredeCai);
         }
     }
 
