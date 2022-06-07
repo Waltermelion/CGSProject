@@ -15,6 +15,7 @@ TagManager:
   - Teleport
   - "D\xF3"
   - ButtonTimer
+  - EndGame
   layers:
   - Default
   - TransparentFX

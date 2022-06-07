@@ -40,12 +40,6 @@ public class PlayerInteract : MonoBehaviour
     private LayerMask gavetaAnimacaoLayer;
 
     [SerializeField]
-    private LayerMask botaoLayer;
-
-    [SerializeField]
-    private LayerMask botaoLayer3;
-
-    [SerializeField]
     private LayerMask calculadora;
 
     private float currentThrowForce;
@@ -101,14 +95,6 @@ public class PlayerInteract : MonoBehaviour
     [Header("GavetaAnim")]
     public GameObject gaveta;
     private bool gavetaAbre;
-
-    [Header("Anima�ao Botao")]
-    public GameObject botao;
-    private bool botaoAbre;
-
-    [Header("Anima��o Parede")]
-    public GameObject parede;
-    private bool paredeCai;
 
     [Header("Anima��o Botao3")]
     public GameObject roda;
@@ -213,12 +199,12 @@ public class PlayerInteract : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-/*        if (xilofoneCanvas.activeInHierarchy)
+        if (xilofoneCanvas.activeInHierarchy)
         {
             player.GetComponent<CharacterController>().enabled = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-        }*/
+        }
 
         PickUpObject();
         Throw();
@@ -229,8 +215,6 @@ public class PlayerInteract : MonoBehaviour
         ElevadorAnim();
         QuadroKey();
         GavetaAnim();
-        Botao();
-        BotaoSeccao3();
         Calculadora();
         Tutorial();
         Inventory();
@@ -714,39 +698,6 @@ public class PlayerInteract : MonoBehaviour
             {
                 gavetaAbre = !gavetaAbre;
                 gaveta.GetComponent<Animator>().SetBool("GavetaAbrir", gavetaAbre);
-            }
-        }
-    }
-    #endregion
-
-    #region Botao
-    private void Botao()
-    {
-        var ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo, distance, botaoLayer))
-        {
-            if (inputManager.onFoot.Interact.triggered)
-                botaoAbre = !botaoAbre;
-            botao.GetComponent<Animator>().SetBool("BotaoCarregado", botaoAbre);
-            paredeCai = !paredeCai;
-            parede.GetComponent<Animator>().SetBool("ParedeCai", paredeCai);
-        }
-    }
-    #endregion Botao
-
-    #region BotaoSec3
-    private void BotaoSeccao3()
-    {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo, distance, botaoLayer3))
-        {
-            if (inputManager.onFoot.Interact.triggered)
-            {
-
             }
         }
     }
