@@ -7,6 +7,10 @@ public class ButtonClicker : MonoBehaviour
     public float dist = 5f;
 
     public GameObject bttnmgr;
+    
+    //Audio
+    public AudioSource audioSource3;
+    public AudioClip buttonClip;
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -15,6 +19,7 @@ public class ButtonClicker : MonoBehaviour
         {
             if (ipt.onFoot.Interact.triggered)
             {
+                audioSource3.PlayOneShot(buttonClip);
                 Debug.Log("you are looking at the button");
                 hit.collider.GetComponent<Animator>().SetTrigger("BotaoCarregado");
                 hit.collider.GetComponent<ButtonInd>().iHaveBeenClicked = true;

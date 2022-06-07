@@ -3,7 +3,10 @@ guid: 78601ee3259666249903a91ad980e52c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bttnmgr: {instanceID: 0}
+  - audioSource3: {instanceID: 0}
+  - eggDropSound: {fileID: 8300000, guid: 7cbc9de168fdfab49a0257db7d508998, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

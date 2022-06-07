@@ -42,7 +42,7 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.z = input.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
-        if (inputManager.onFoot.Move.IsPressed() && Time.time >= nextTimeToPlay && isGrounded)
+        if (inputManager.onFoot.Move.IsPressed() && Time.time >= nextTimeToPlay && isGrounded && !inputManager.onFoot.Run.IsPressed())
         {
             nextTimeToPlay = Time.time + 1f / audioPlayRate;
             audioSource1.PlayOneShot(footStepSound);
@@ -54,8 +54,12 @@ public class PlayerMotor : MonoBehaviour
         if(isGrounded && inputManager.onFoot.Run.IsPressed())
         {
             controller.Move(transform.TransformDirection(moveDirection) * sprint *Time.deltaTime);
+            if (Time.time >= nextTimeToPlay && isGrounded)
+            {
+                nextTimeToPlay = Time.time + 0.8f / audioPlayRate;
+                audioSource1.PlayOneShot(footStepSound);
+            }
         }
-        
     }
 
     public void Jump()

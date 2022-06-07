@@ -35737,9 +35737,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 453486496}
     m_Modifications:
     - target: {fileID: 1460793793069217050, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
-      propertyPath: bttnmgr
+      propertyPath: buttonClip
       value: 
-      objectReference: {fileID: 564272516}
+      objectReference: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
     - target: {fileID: 1460793793069217055, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Rosa
       value: 
@@ -35757,9 +35757,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1931152253}
     - target: {fileID: 1460793793463764492, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
-      propertyPath: bttnmgr
+      propertyPath: buttonClip
       value: 
-      objectReference: {fileID: 564272516}
+      objectReference: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
     - target: {fileID: 1460793793488456272, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Vermelho
       value: 
@@ -35769,13 +35769,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 382899672}
     - target: {fileID: 1460793793488456303, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
-      propertyPath: bttnmgr
+      propertyPath: buttonClip
       value: 
-      objectReference: {fileID: 564272516}
+      objectReference: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
     - target: {fileID: 1460793793521689136, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
-      propertyPath: bttnmgr
+      propertyPath: buttonClip
       value: 
-      objectReference: {fileID: 564272516}
+      objectReference: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
     - target: {fileID: 1460793793521689141, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Amarelo
       value: 
@@ -35833,9 +35833,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1460793794774654189, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
-      propertyPath: bttnmgr
+      propertyPath: buttonClip
       value: 
-      objectReference: {fileID: 564272516}
+      objectReference: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
     - target: {fileID: 1460793794774654190, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
       propertyPath: Verde
       value: 
@@ -35844,6 +35844,66 @@ PrefabInstance:
       propertyPath: OVerde
       value: 
       objectReference: {fileID: 1332097244}
+    - target: {fileID: 2093693269665250534, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093693269665250534, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093693269665250534, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788097902261515251, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788097902261515251, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788097902261515251, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984269556839538168, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984269556839538168, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984269556839538168, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037418169463024497, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037418169463024497, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037418169463024497, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890828281938557912, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890828281938557912, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890828281938557912, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd747b86c29e4fb42957a18a70589749, type: 3}
 --- !u!1001 &5112681779075047171
@@ -36014,10 +36074,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 624889068}
     - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 11400000, guid: cc960f34886b373438dc506ab251db6b, type: 2}
-    - target: {fileID: 5112681778952530148, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: textCofre
       value: 
       objectReference: {fileID: 1527759085}
@@ -36079,10 +36135,6 @@ PrefabInstance:
       objectReference: {fileID: 564272516}
     - target: {fileID: 7432525010857143147, guid: 0bb1819ea7cf18747a95a5b3d299fb8d, type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

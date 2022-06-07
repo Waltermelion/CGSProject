@@ -861,6 +861,8 @@ MonoBehaviour:
   ipt: {fileID: 5112681778952530150}
   dist: 5
   bttnmgr: {fileID: 0}
+  audioSource3: {fileID: 1050719941798529822}
+  buttonClip: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
 --- !u!114 &2424609302336518118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,7 +1114,7 @@ MonoBehaviour:
   Calculator: {fileID: 0}
   InputText: {fileID: 0}
   panelInventory: {fileID: 0}
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: cc960f34886b373438dc506ab251db6b, type: 2}
   calculator: {fileID: 0}
   livro: {fileID: 0}
   tutorial: {fileID: 0}
