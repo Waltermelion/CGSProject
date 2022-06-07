@@ -34,9 +34,6 @@ public class PlayerInteract : MonoBehaviour
     private LayerMask elevatorLayer;
 
     [SerializeField]
-    private LayerMask QuadroKeypadLayer;
-
-    [SerializeField]
     private LayerMask gavetaAnimacaoLayer;
 
     [SerializeField]
@@ -70,7 +67,6 @@ public class PlayerInteract : MonoBehaviour
 
     [Header("Cofre")]
     public GameObject cofre;
-
     public Text textCofre;
     public string password = "1080";
 
@@ -82,23 +78,9 @@ public class PlayerInteract : MonoBehaviour
     public GameObject elevador;
     private bool up;
 
-    [Header("Anima��oQuadro")]
-    public GameObject quadroDoor;
-    private bool quadroCai;
-
-    [Header("Quadro")]
-    public GameObject quadro;
-
-    public Text textQuadro;
-    public string passwordQuadro = "125";
-
     [Header("GavetaAnim")]
     public GameObject gaveta;
     private bool gavetaAbre;
-
-    [Header("Anima��o Botao3")]
-    public GameObject roda;
-    private bool casaRoda;
 
     [Header("Calculator")]
     public GameObject Calculator;
@@ -153,7 +135,6 @@ public class PlayerInteract : MonoBehaviour
         book.SetActive(false);
         cofre.SetActive(false);
         chave.SetActive(false);
-        quadro.SetActive(false);
         Calculator.SetActive(false);
         panelInventory.SetActive(false);
         calculator.SetActive(false);
@@ -172,13 +153,6 @@ public class PlayerInteract : MonoBehaviour
         }
 
         if (cofre.activeInHierarchy)
-        {
-            player.GetComponent<CharacterController>().enabled = false;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-        if (quadro.activeInHierarchy)
         {
             player.GetComponent<CharacterController>().enabled = false;
             Cursor.visible = true;
@@ -213,7 +187,6 @@ public class PlayerInteract : MonoBehaviour
         Book();
         Cofre();
         ElevadorAnim();
-        QuadroKey();
         GavetaAnim();
         Calculadora();
         Tutorial();
@@ -477,68 +450,6 @@ public class PlayerInteract : MonoBehaviour
                 elevador.GetComponent<Animator>().SetBool("Elevador", up);
             }
         }
-    }
-    #endregion
-
-    #region QuadroKeypad
-    void QuadroKey()
-    {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo, distance, QuadroKeypadLayer))
-        {
-            if (inputManager.onFoot.Interact.triggered)
-            {
-                Time.timeScale = 0f;
-                quadro.SetActive(true);
-            }
-        }
-    }
-
-    public void NumberQuadro(int number)
-    {
-        textQuadro.text += number.ToString();
-        audioSource2.PlayOneShot(keypadClickSound);
-    }
-
-    public void ExecuteQuadro()
-    {
-        audioSource2.PlayOneShot(keypadClickSound);
-        if (textQuadro.text == passwordQuadro)
-        {
-            textQuadro.text = "Correct";
-
-            quadroCai = !quadroCai;
-            quadroDoor.GetComponent<Animator>().SetBool("Cai", quadroCai);
-
-            quadro.SetActive(false);
-            player.GetComponent<CharacterController>().enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            textQuadro.text = "Wrong";
-        }
-    }
-
-    public void ClearQuadro()
-    {
-        {
-            textQuadro.text = "";
-            audioSource2.PlayOneShot(keypadClickSound);
-        }
-    }
-
-    public void ExitQuadro()
-    {
-        textQuadro.text = "";
-        quadro.SetActive(false);
-        player.GetComponent<CharacterController>().enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
-        audioSource2.PlayOneShot(keypadClickSound);
     }
     #endregion
 
