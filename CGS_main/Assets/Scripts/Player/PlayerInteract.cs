@@ -139,7 +139,8 @@ public class PlayerInteract : MonoBehaviour
         panelInventory.SetActive(false);
         calculator.SetActive(false);
         livro.SetActive(false);
-//        xilofoneCanvas.SetActive(false);
+        xilofoneCanvas.SetActive(false);
+        Acertou.SetActive(false);
     }
 
     private void Update()

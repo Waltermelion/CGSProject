@@ -14,7 +14,7 @@ public class ButtonManager : MonoBehaviour
     public Animator doorOpen;
     
     //Timer
-    private float seconds = 30;
+    private float seconds = 40;
     private bool timeSeconds = false;
 
     [SerializeField] private AudioSource timerS;
@@ -70,7 +70,7 @@ public class ButtonManager : MonoBehaviour
                 loseS.Play();
                 ambient.Play();
                 puzzleStart = false;
-                seconds = 30;
+                seconds = 40;
             }
         }
     }
