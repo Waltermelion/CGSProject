@@ -22,9 +22,6 @@ public class PlayerInteract : MonoBehaviour
     private Rigidbody currentObjectRb;
 
     [SerializeField]
-    private LayerMask InformationItem;
-
-    [SerializeField]
     private LayerMask BookClick;
 
     [SerializeField]
@@ -44,10 +41,6 @@ public class PlayerInteract : MonoBehaviour
     public float throwForceIncreaseSpeed;
 
     private InputManager inputManager;
-
-    [Header("Nome dos objetos")]
-    public TextMeshProUGUI pickUpText;
-    public TextMeshProUGUI itemInformation;
 
     [Header("Keypad")]
     public GameObject player;
@@ -129,8 +122,7 @@ public class PlayerInteract : MonoBehaviour
         inputManager = GetComponent<InputManager>();
 
         Time.timeScale = 0f;
-
-        pickUpText.gameObject.SetActive(false);
+        
         keypad.SetActive(false);
         book.SetActive(false);
         cofre.SetActive(false);
@@ -183,7 +175,6 @@ public class PlayerInteract : MonoBehaviour
 
         PickUpObject();
         Throw();
-        Information_Item();
         KeyPad();
         Book();
         Cofre();
@@ -210,9 +201,6 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, distance, PickUp))
         {
-            pickUpText.gameObject.SetActive(true);
-            pickUpText.text = hitInfo.collider.name;
-
             if (inputManager.onFoot.canPickUp.triggered)
             {
                 currentObject = hitInfo.collider.gameObject;
@@ -231,11 +219,6 @@ public class PlayerInteract : MonoBehaviour
 
                 currentObjectRb.isKinematic = true;
             }
-        }
-        else
-        {
-            pickUpText.gameObject.SetActive(false);
-            pickUpText.text = "";
         }
     }
     #endregion
@@ -278,25 +261,6 @@ public class PlayerInteract : MonoBehaviour
             currentObjectRb = null;
 
             currentThrowForce = 0f;
-        }
-    }
-    #endregion
-
-    #region InformationItem
-    private void Information_Item()
-    {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(ray, out hitInfo, distance, InformationItem))
-        {
-            itemInformation.gameObject.SetActive(true);
-            itemInformation.text = hitInfo.collider.name;
-        }
-        else
-        {
-            itemInformation.gameObject.SetActive(false);
-            itemInformation.text = "";
         }
     }
     #endregion

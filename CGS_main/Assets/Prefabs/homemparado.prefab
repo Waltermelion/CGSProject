@@ -863,6 +863,10 @@ MonoBehaviour:
   bttnmgr: {fileID: 0}
   audioSource3: {fileID: 1050719941798529822}
   buttonClip: {fileID: 8300000, guid: e4c9c14c763fd214785ca43e8956e307, type: 3}
+  timerS: {fileID: 0}
+  loseS: {fileID: 0}
+  ambient: {fileID: 0}
+  pilarButoes: {fileID: 0}
 --- !u!114 &2424609302336518118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4717904890050120292}
   - component: {fileID: 5112681778952530158}
+  - component: {fileID: 2733954556873055442}
   - component: {fileID: 5112681778952530152}
   - component: {fileID: 6054500822891831826}
   - component: {fileID: 5112681778952530150}
@@ -1009,6 +1014,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &2733954556873055442
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346490930531946718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.4
+  m_Height: 14.26
+  m_Direction: 1
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!143 &5112681778952530152
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1071,9 +1090,6 @@ MonoBehaviour:
   PickUp:
     serializedVersion: 2
     m_Bits: 128
-  InformationItem:
-    serializedVersion: 2
-    m_Bits: 256
   BookClick:
     serializedVersion: 2
     m_Bits: 512
@@ -1083,25 +1099,14 @@ MonoBehaviour:
   elevatorLayer:
     serializedVersion: 2
     m_Bits: 2048
-  QuadroKeypadLayer:
-    serializedVersion: 2
-    m_Bits: 4096
   gavetaAnimacaoLayer:
     serializedVersion: 2
     m_Bits: 8192
-  botaoLayer:
-    serializedVersion: 2
-    m_Bits: 16384
-  botaoLayer3:
-    serializedVersion: 2
-    m_Bits: 32768
   calculadora:
     serializedVersion: 2
     m_Bits: 65536
   maxThrowForce: 5
   throwForceIncreaseSpeed: 5
-  pickUpText: {fileID: 0}
-  itemInformation: {fileID: 0}
   player: {fileID: 5346490930531946718}
   keypad: {fileID: 0}
   book: {fileID: 0}
@@ -1116,14 +1121,7 @@ MonoBehaviour:
   cofreKeypad: {fileID: 0}
   chave: {fileID: 0}
   elevador: {fileID: 0}
-  quadroDoor: {fileID: 0}
-  quadro: {fileID: 0}
-  textQuadro: {fileID: 0}
-  passwordQuadro: 125
   gaveta: {fileID: 0}
-  botao: {fileID: 0}
-  parede: {fileID: 0}
-  roda: {fileID: 0}
   Calculator: {fileID: 0}
   InputText: {fileID: 0}
   panelInventory: {fileID: 0}
